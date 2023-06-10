@@ -187,6 +187,12 @@ const Home = () => {
           <h2 className='text-2xl font-semibold text-white ml-8'>Projects</h2>
           {mergedData.map((repo) => (
             <div key={repo.github.id} className='flex flex-col'>
+              <button
+                className='flex p-4 font-semibold text-white bg-gray-700 rounded-md shadow-lg w-fit mt-2 hover:bg-gray-600'
+                onClick={() => window.open(repo.github.html_url, '_blank')}
+              >
+                View on Github <FaGithub className='h-6 w-6 ml-4' />
+              </button>
               <a
                 href={repo.netlify.url}
                 target='_blank'
