@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-children-prop */
 import React, { useState, useEffect } from 'react';
 import { Octokit } from 'octokit';
@@ -11,8 +12,11 @@ const Home = () => {
   const [mergedData, setMergedData] = useState([]);
   const [allRepos, setAllRepos] = useState([]);
 
+  const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+  const NETLIFY_TOKEN = process.env.REACT_APP_NETLIFY_TOKEN;
+
   const octokit = new Octokit({
-    auth: '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',
+    auth: GITHUB_TOKEN,
   });
 
   useEffect(() => {
@@ -41,7 +45,7 @@ const Home = () => {
     const baseUrl = 'https://api.netlify.com/api/v1/';
     fetch(`${baseUrl}sites`, {
       headers: {
-        Authorization: 'Bearer OpUTthmECAHgnOL47AoIMR7HyxN-K2VT1-WdtIUUcgQ',
+        Authorization: 'Bearer ' + NETLIFY_TOKEN,
       },
       method: 'GET',
     })
