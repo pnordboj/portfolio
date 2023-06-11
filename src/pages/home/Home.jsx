@@ -107,15 +107,15 @@ const Home = () => {
   return (
     <div className='container mx-auto items-center min-h-screen'>
       <h1 className='text-4xl font-bold mb-8 mt-8 text-white'>Portfolio</h1>
-      <div className='flex flex-row'>
-        <div className='flex flex-col w-6/12'>
+      <div className='flex lg:flex-row flex-col'>
+        <div className='flex flex-col lg:w-6/12'>
           <h2 className='text-2xl font-semibold mb-4 text-white'>About Me</h2>
 
-          <div className='flex flex-col bg-gradient-to-b mb-4 from-white to-slate-300 rounded p-6 w-8/12 shadow-lg'>
+          <div className='flex flex-col bg-gradient-to-b mb-4 from-white to-slate-300 rounded p-6 ml-2 lg:w-8/12 w-11/12 shadow-lg'>
             <p>Hello! My name is Patrick, i am a 26 year old student at Noroff</p>
             <p>I am currently taking a higher professional degree in front end development</p>
           </div>
-          <div className='flex flex-col bg-gradient-to-b mb-4 from-white to-slate-300 rounded p-6 w-8/12 shadow-lg'>
+          <div className='flex flex-col bg-gradient-to-b mb-4 from-white to-slate-300 rounded p-6 ml-2 lg:w-8/12 w-11/12 shadow-lg'>
             <p>
               I am currently working as a full time developer at a company called CustomPublish AS
             </p>
@@ -124,7 +124,7 @@ const Home = () => {
               becoming a full stack developer
             </p>
           </div>
-          <div className='flex flex-col bg-gradient-to-b from-white to-slate-300 rounded p-6 w-8/12 shadow-lg'>
+          <div className='flex flex-col bg-gradient-to-b from-white to-slate-300 rounded p-6 ml-2 lg:w-8/12 w-11/12 shadow-lg'>
             <p>
               I’m currently learning different ways to utilize AI to benefit my workflow or other
               projects
@@ -183,7 +183,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className='flex flex-col space-x-8 rounded w-6/12'>
+        <div className='flex flex-col space-x-8 rounded lg:w-6/12 w-11/12'>
           <h2 className='text-2xl font-semibold text-white ml-8'>Projects</h2>
           {mergedData.map((repo) => (
             <div key={repo.github.id} className='flex flex-col'>
